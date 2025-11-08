@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow – Colorful SPA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">🌸 TaskFlow</div>
+    <nav>
+      <a href="#/" class="nav-link">Home</a>
+      <a href="#/tasks" class="nav-link">Tasks</a>
+      <a href="#/about" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main id="app"></main>
+
+
+  <footer>
+    <p>© 2025 TaskFlow | Designed with ❤️ using HTML, CSS & JS</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+root {
+  --color1: #ff6ec7;
+  --color2: #7367f0;
+  --color3: #32e0c4;
+  --accent: #ffd166;
+  --white: #ffffff;
+  --dark: #222;
+  --bg: linear-gradient(120deg, var(--color1), var(--color2));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+form {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: var(--dark);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #ffe58f;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task {
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0.6rem 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task button {
+  background: #ff5c8d;
+  color: white;
+  padding: 0.4rem 0.8rem;
+}
+
+.task button:hover {
+  background: #ff3262;
+}
+
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+root {
+  --color1: #ff6ec7;
+  --color2: #7367f0;
+  --color3: #32e0c4;
+  --accent: #ffd166;
+  --white: #ffffff;
+  --dark: #222;
+  --bg: linear-gradient(120deg, var(--color1), var(--color2));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+form {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: var(--dark);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #ffe58f;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task {
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0.6rem 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task button {
+  background: #ff5c8d;
+  color: white;
+  padding: 0.4rem 0.8rem;
+}
+
+.task button:hover {
+  background: #ff3262;
+}
+
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+const routes = {
+  '/': homePage,
+  '/tasks': tasksPage,
+  '/about': aboutPage
+};
+
+
+function navigate() {
+  const path = location.hash.slice(1) || '/';
+  const route = routes[path] || notFoundPage;
+  document.getElementById('app').innerHTML = route();
+}
+
+
+function homePage() {
+  return `
+    <section>
+      <h2>Welcome to TaskFlow 🌸</h2>
+      <p>Stay organized in style! TaskFlow helps you manage your daily goals through a beautiful and responsive interface.</p>
+    </section>
+  `;
+}
+
+function aboutPage() {
+  return `
+    <section>
+      <h2>About TaskFlow</h2>
+      <p><strong>TaskFlow</strong> is a Single Page Application built using only HTML, CSS, and JavaScript.</p>
+      <ul>
+        <li>🎨 Responsive and colorful design</li>
+        <li>🧭 Client-side routing</li>
+        <li>💾 LocalStorage data persistence</li>
+        <li>⚡ Fast, lightweight, and framework-free</li>
+      </ul>
+    </section>
+  `;
+}
+
+function notFoundPage() {
+  return `
+    <section>
+      <h2>404 - Page Not Found</h2>
+      <p>The page you're looking for doesn’t exist!</p>
+    </section>
+  `;
+}
+
+
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+function tasksPage() {
+  const taskListHTML = tasks.map((t, i) => `
+    <li class="task">
+      <span>${t}</span>
+      <button onclick="deleteTask(${i})">Delete</button>
+    </li>
+  `).join('');
+
+  return `
+    <section>
+      <h2>📝 My Tasks</h2>
+      <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Add a new task..." required />
+        <button type="submit">Add</button>
+      </form>
+      <ul class="task-list">${taskListHTML || '<p>No tasks yet!</p>'}</ul>
+    </section>
+  `;
+}
+
+function addTask(e) {
+  e.preventDefault();
+  const input = document.getElementById('taskInput');
+  const value = input.value.trim();
+  if (value) {
+    tasks.push(value);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    input.value = '';
+    navigate();
+  }
+}
+
+function deleteTask(index) {
+  tasks.splice(index, 1);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  navigate();
+}
+
+
+window.addEventListener('hashchange', navigate);
+window.addEventListener('load', () => {
+  navigate();
+  document.addEventListener('submit', (e) => {
+    if (e.target.id === 'taskForm') addTask(e);
+  });
+});
